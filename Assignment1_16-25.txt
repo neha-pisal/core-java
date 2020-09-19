@@ -1,0 +1,250 @@
+//16.	Write a program to print table of any entered number using loop.
+
+import java.util.Scanner;
+class Question16{
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter any Number");
+		int n = sc.nextInt();
+		for(int i=1;i<11;i++)
+		{
+			System.out.println(n+"*"+i+"="+n*i);
+		}
+		
+	}
+	
+}
+
+------------------------------------------------------------------------
+
+//17.	Write a program to reverse a given number.
+
+import java.util.*;
+class Question17{
+				public static void main(String args[]){
+					Scanner sc = new Scanner(System.in);
+					System.out.println("Enter any numbers");
+					int num = sc.nextInt();
+					int reversed = 0;
+					while(num != 0) {
+					int digit = num % 10;
+					reversed = reversed * 10 + digit;
+					num /= 10;
+					}
+
+					System.out.println("Reversed Number: " + reversed);
+					
+			}
+}
+
+-------------------------------------------------------------------------------------------------
+
+//18.	Program to check whether number is prime or not.
+
+import java.util.*;
+class Question18{
+				public static void main(String args[]){
+				Scanner sc =  new Scanner(System.in);
+				System.out.println("Enter any number");
+				int num = sc.nextInt();
+				int f=0;
+				for(int i=2;i<=num/2;i++){
+					if(num%i==0)
+					{
+							f=1;
+							break;
+					}
+				}
+				if(f==1){
+					System.out.println("It is  Not  Prime");
+				}
+				else
+				{
+					System.out.println("It is Prime");
+				}
+					
+				}
+	
+}
+
+-------------------------------------------------------------------------------------------------
+//19.	Calculate  series : 12+22+32+42+.........+n2
+
+import java.util.*;
+public class Question19{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number");
+		int n= sc.nextInt();
+		int num=2;
+		int sum=0;
+		for(int i=0;i<n;i++)
+		{
+			num+=10;
+			if(i==n-1)
+			{
+				System.out.print(num);
+				break;
+			}
+			System.out.print(num+"+");
+		}
+	}
+}
+-------------------------------------------------------------------------------------------------
+//20.	Print all prime numbers between two given numbers. [ break continue ]
+import java.util.*;
+class Question20{
+				public static void main(String[] args) {
+				Scanner sc = new Scanner(System.in);
+				System.out.println("Enter Starting range:");
+				int low = sc.nextInt();
+				System.out.println("Enter Ending range:");
+				int high = sc.nextInt();
+        while (low < high) {
+            boolean flag = false;
+
+            for(int i = 2; i <= low/2; ++i) {
+                if(low % i == 0) {
+                    flag = true;
+                    break;
+                }
+            }
+
+            if (!flag && low != 0 && low != 1)
+                System.out.print(low + " ");
+
+            ++low;
+        }
+    }
+        }
+
+----------------------------------------------------------------------------------------------------------
+
+//21.	Program to show sum and average of 10 element array. Accept array elements from user. 
+
+import java.util.*;
+class Question21{
+				public static void main(String args[]){
+					Scanner sc = new Scanner(System.in);
+					int arr[] = new int[10];
+					int sum=0;
+					System.out.println("Enter elements");
+					for(int i=0;i<arr.length;i++){
+						arr[i]=sc.nextInt();
+						sum+=arr[i];
+					}
+					float average=sum/arr.length;
+					System.out.println("Average of 10 element is "+average);
+					
+				}
+}
+
+---------------------------------------------------------------------------------------------------------------
+
+//22.	Sort a ten element array in descending order.
+
+import java.util.*;
+class Question22{
+				public static void main(String args[]){
+					Scanner sc = new Scanner(System.in);
+					int arr[] = new int[10];
+					int array=0;
+					System.out.println("Enter the 10 Elements");
+					for(int i=0;i<arr.length;i++){
+						arr[i]=sc.nextInt();
+					}
+					Arrays.sort(arr);
+					for(int i=arr.length -1;i>=0;i--){
+						System.out.print(arr[i]+" ");
+					}
+					
+				}
+}
+
+---------------------------------------------------------------------------------------------------------------
+
+//23.	Write a program to reverse the array elements.
+
+import java.util.*;
+class Question23{
+				public static void main(String args[]){
+					Scanner sc = new Scanner(System.in);
+					int arr[]=new int[5];
+					System.out.println("Enter the array Elements");
+					for(int i=0;i<arr.length;i++){
+						arr[i]=sc.nextInt();
+					}
+					System.out.print("Reverse of Array is");
+					for(int i = arr.length -1;i>=0;i--){
+						System.out.print(" "+arr[i]);
+					}
+				}
+}
+
+--------------------------------------------------------------------------------------------------------------------
+
+//24.	Write a program to search an element in the array.
+
+import java.util.*;
+class Question24{
+				public static void main(String args[]){
+				Scanner sc=new Scanner(System.in);
+				System.out.println("Enter the size of array");
+				int n=sc.nextInt();
+				int arr[]=new int[n];
+				System.out.println("Enter the array element");
+				for(int i=0;i<arr.length;i++){
+					arr[i]=sc.nextInt();
+				}
+				
+				System.out.println("Enter the number that you want to search in array:");
+				int num =sc.nextInt();
+				int flag=0;
+				for(int i=0;i<arr.length;i++)
+				{
+					if(arr[i]==num){
+					System.out.println("The number "+num+" found at a index location:"+i);
+					flag=1;
+					}
+				}
+				if(flag==0)
+				{
+					System.out.println("the number is not found");
+				}
+					
+					
+				}
+}
+
+--------------------------------------------------------------------------------------------------------------------------
+
+//25.	Write the program to find the sum of even elements and sum of odd elements present in the array of integer type.
+
+import java.util.*;
+class Question25{
+				public static void main(String args[]){
+					Scanner sc = new Scanner(System.in);
+					System.out.println("Enter the size of an array");
+					int n=sc.nextInt();
+					int arr[] = new int[n];
+					int OddTot=0;
+					int EvenTot=0;
+					System.out.println("Enter the elements of an array");
+					for(int i=0;i<arr.length;i++){
+						arr[i]=sc.nextInt();
+					}
+					for(int j=0;j<arr.length;j++){
+						if(arr[j]%2==0)
+						{
+							EvenTot=EvenTot+arr[j];
+						}
+						else
+						{
+							OddTot=OddTot+arr[j];
+						}
+					}
+					System.out.println("Sum Of even Eements= "+EvenTot);
+					System.out.println("Sum Of odd Eements= "+OddTot);
+				}
+}
